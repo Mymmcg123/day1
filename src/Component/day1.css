@@ -1,3 +1,99 @@
-.blockName{
+.grid-container{
+    display: grid;
+    background: #61dafb;
+    grid-template-areas: "img Name LastName"
+                        "img description description"
+                        "proJ proJ proJ"
+                        "form form form";
+    grid-template-columns: 300px 1fr 1fr;
+    grid-template-rows: 80px 300px 300px 300px;
+    margin: 0px 250px;
+}
 
+.img{
+    grid-area: img;
+}
+
+.description{
+    grid-area: description;
+}
+
+.ProjectName{
+    grid-area: proJ;
+}
+.form{
+    grid-area: form;
+
+}
+
+.grid{
+    border: 1px solid #fff;
+}
+
+.Name h4{
+    padding: 1em;
+}
+
+.LastName h4{
+    padding: 1em;
+}
+
+.description{
+    padding: 1em;
+}
+
+.ProjectName h4{
+    padding-top: 1em;
+    text-align: center;
+}
+
+Form {
+    width: 43%;
+    padding: 11px 9px;
+    margin: 57px 25rem;
+    display: inline-block;
+}
+
+.form-f1 {
+    width: 85%;
+    padding: 1px 37px;
+    margin: 7px -26px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.form-f2 {
+    width: 85%;
+    padding: 1px 37px;
+    margin: 7px -27px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.form-f3 {
+    width: 85%;
+    padding: 1px 37px;
+    margin: 7px -28px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+
+.form-contain1{
+    display: block;
+
+}
+
+.form-contain2 {
+    display: block;
+    margin-left: -77px;
+    margin-right: 22px;
+    padding-left: 50px;
+}
+
+.form-contain3 {
+    display: block;
+    margin-left: -80px;
+    margin-right: 24px;
+    padding-left: 50px;
 }
