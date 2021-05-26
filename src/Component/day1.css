@@ -1,6 +1,6 @@
 .grid-container{
     display: grid;
-    background: #61dafb;
+    /*background: #61dafb;*/
     grid-template-areas: "img Name LastName"
                         "img description description"
                         "proJ proJ proJ"
@@ -8,6 +8,8 @@
     grid-template-columns: 300px 1fr 1fr;
     grid-template-rows: 80px 300px 300px 300px;
     margin: 0px 250px;
+    grid-gap: 1px 2px;
+    color: rgb(96, 52, 255);
 }
 
 .img{
@@ -27,7 +29,9 @@
 }
 
 .grid{
-    border: 1px solid #fff;
+    border-radius: 15px;
+    background: #33FFFF;
+
 }
 
 .Name h4{
@@ -40,6 +44,10 @@
 
 .description{
     padding: 1em;
+}
+
+.description p{
+    margin-top: 1rem;
 }
 
 .ProjectName h4{
@@ -56,8 +64,8 @@ Form {
 
 .form-f1 {
     width: 85%;
-    padding: 1px 37px;
-    margin: 7px -26px;
+    padding: 1px 34px;
+    margin: 7px -25px;
     display: inline-block;
     box-sizing: border-box;
 }
@@ -96,4 +104,8 @@ Form {
     margin-left: -80px;
     margin-right: 24px;
     padding-left: 50px;
+}
+
+.my-project p{
+    margin-top: 1rem;
 }

@@ -1,63 +1,56 @@
 import React from 'react'
-import {useState,useEffect} from "react";
-import { Form,Button } from 'react-bootstrap';
+import {useState, useEffect} from "react";
+import {Form, Button} from 'react-bootstrap';
 import './day1.css'
 import mark from './Mark.jpg'
-import axios from "axios";
+
 
 
 const Example = ({addPost}) => {
     // Declare a new state variable, which we'll call "count"
     const [Name, setName] = useState(" ");
-    const [ShName,setShName] = useState(" ");
+    const [ShName, setShName] = useState("Kittanon");
 
     const [LastName, setLastName] = useState(" ");
-    const [ShLastName,setShLastName] = useState(" ");
+    const [ShLastName, setShLastName] = useState("Sonsung");
 
-    const [Project,setProject] = useState(" ");
-    const [post,setPost] = useState([]);
+    const [Project, setProject] = useState(" ");
+    const [post, setPost] = useState(["ProjectName: NumericalMethod Link : https://github.com/Mymmcg2/web"]);
 
 
-    const AddName = (event)=>{
+    const AddName = (event) => {
         setName(event.target.value);
     }
 
-    const AddLastName = (event)=>{
+    const AddLastName = (event) => {
         setLastName(event.target.value);
     }
 
-    const ShowName =(event)=>{
+    const ShowName = (event) => {
         event.preventDefault();
         setShName(Name);
+        setName(" ");
     }
 
 
-    const ShowLastName =(event)=>{
+    const ShowLastName = (event) => {
         event.preventDefault();
         setShLastName(LastName);
+        setLastName(" ");
+
     }
 
-    const AddProject = (event)=>{
+    const AddProject = (event) => {
         setProject(event.target.value);
     }
 
-    const Posts = (event) =>{
+    const Posts = (event) => {
         event.preventDefault();
-        setPost((pushPost)=>{
-            return[...post,Project]
+        setPost((pushPost) => {
+            return [...post, Project]
         })
+        setProject(" ");
 
-
-    }
-
-
-    useEffect(() => {
-        test()
-    } ,[])
-
-    const test = async () => {
-        const {data} = await axios.get('https://disease.sh/v3/covid-19/countries/TH')
-        console.log("Data : " + data.deaths);
 
     }
 
@@ -73,27 +66,30 @@ const Example = ({addPost}) => {
                 <h4>Lastname : {ShLastName}</h4>
             </div>
             <div className="grid description">
-                <h4>Description :</h4>
+                <h4>Description : <p>นักศึกษามหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ คณะวิทยาศาสตร์ประยุกต์ สาขาวิทยาการคอมพิวเตอร์
+                                     ชั้นปีที่ 3 ภาษาโปรแกรมที่เขียนได้ HTML,Java,C++ งานอดิเรกชอบเล่นเกม เล่นกีฬา และ<br/>
+                                     เป็นนักกีฬาบาสของหมาวิทยาลัย</p></h4>
+
             </div>
             <div className="grid ProjectName">
-                <h4>Project Name
-                    {post.map((Arr,index)=>
-                        <div>
+                <h4>My Project
+                    {post.map((Arr, index) =>
+                        <div className='my-project'>
                             <p>{Arr}</p>
                         </div>
                     )}
                 </h4>
-
             </div>
             <div className="grid form">
-                <Form >
+                <Form>
                     <Form.Group controlId="grid formBasicEmail">
+
                         <div className="form-contain1">
                             <Form.Label className="label"><h6>Name</h6></Form.Label>
                             <div className="form-f1">
-                                <Form.Control  type="text"  placeholder="Enter your name"  value={Name} onChange={AddName}/>
+                                <Form.Control type="text" placeholder="Enter your name" value={Name} onChange={AddName}/>
                             </div>
-                            <Button  className="button" variant="primary" onClick={ShowName}>Add</Button>
+                            <Button className="button" variant="primary" onClick={ShowName}>Add</Button>
                         </div>
 
                         <div className="form-contain2">
@@ -111,9 +107,6 @@ const Example = ({addPost}) => {
                             </div>
                             <Button className="button" variant="primary" type="submit" onClick={Posts}>Add</Button>
                         </div>
-
-
-
                     </Form.Group>
                 </Form>
             </div>
